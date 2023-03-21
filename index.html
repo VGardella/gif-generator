@@ -20,13 +20,21 @@
             return gifType;
         }
 
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=jqR8s06DZtJJqxDJBmt8cXBmvBnKTpAz&s=cats', {mode: 'cors'})
-            .then(function(response) {
-            return response.json();
-            })
-            .then(function(response) {
-            img.src = response.data.images.original.url;
-            });
+        function searchGif(value) {
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=jqR8s06DZtJJqxDJBmt8cXBmvBnKTpAz&s=${value}`, {mode: 'cors'})
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(response) {
+                    img.src = response.data.images.original.url;
+                    if (img.style.display === 'none') {
+                        img.style.display = 'block'
+                    };
+                })
+                .catch(function(response) {
+                    alert('Search error! No results...')
+                });
+        }
     </script>
 </body>
 </html>
