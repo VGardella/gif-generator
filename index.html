@@ -13,6 +13,15 @@
     </div>
     <img src="#">
     <script>
+        const submitBtn = document.getElementById('submitBtn');
+        const img = document.querySelector('img');
+        img.style.display = 'none'
+        
+        submitBtn.addEventListener('click', () => {
+            let value = getValue();
+            searchGif(value);
+        });
+
         function getValue() {
             const searchBar = document.getElementById('searchBar');
             let gifType = searchBar.value;
