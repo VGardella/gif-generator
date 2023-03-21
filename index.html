@@ -13,13 +13,20 @@
     </div>
     <img src="#">
     <script>
-            fetch('https://api.giphy.com/v1/gifs/translate?api_key=jqR8s06DZtJJqxDJBmt8cXBmvBnKTpAz&s=cats', {mode: 'cors'})
-                .then(function(response) {
-                return response.json();
-                })
-                .then(function(response) {
-                img.src = response.data.images.original.url;
-                });
+        function getValue() {
+            const searchBar = document.getElementById('searchBar');
+            let gifType = searchBar.value;
+            searchBar.value = '';
+            return gifType;
+        }
+
+        fetch('https://api.giphy.com/v1/gifs/translate?api_key=jqR8s06DZtJJqxDJBmt8cXBmvBnKTpAz&s=cats', {mode: 'cors'})
+            .then(function(response) {
+            return response.json();
+            })
+            .then(function(response) {
+            img.src = response.data.images.original.url;
+            });
     </script>
 </body>
 </html>
