@@ -1,0 +1,58 @@
+body{
+    background:
+    conic-gradient(at 10% 50%,#0000 75%,#7abcad 0),
+    conic-gradient(at 10% 50%,#0000 75%,#7abcad 0) calc(1*20px) calc(3*20px),
+    conic-gradient(at 10% 50%,#0000 75%,#7abcad 0) calc(2*20px) calc(1*20px),
+    conic-gradient(at 10% 50%,#0000 75%,#7abcad 0) calc(3*20px) calc(4*20px),
+    conic-gradient(at 10% 50%,#0000 75%,#7abcad 0) calc(4*20px) calc(2*20px),
+    conic-gradient(at 50% 10%,#0000 75%,#7abcad 0) 0 calc(4*20px),
+    conic-gradient(at 50% 10%,#0000 75%,#7abcad 0) calc(1*20px) calc(2*20px),
+    conic-gradient(at 50% 10%,#0000 75%,#7abcad 0) calc(2*20px) 0,
+    conic-gradient(at 50% 10%,#0000 75%,#7abcad 0) calc(3*20px) calc(3*20px),
+    conic-gradient(at 50% 10%,#0000 75%,#7abcad 0) calc(4*20px) calc(1*20px),
+    #b0e2be;
+    background-size: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbar{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+input{
+    appearance: none;
+    width: 500px;
+    height: 30px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    background-color: #e7fded;
+    padding: 5px 5px 5px 15px;
+}
+
+input:focus{
+    outline: none;
+    background-color: #ffffff;
+}
+
+button{
+    border: none;
+    border-radius: 0 20px 20px 0;
+    width: 80px;
+    background: #47796d;
+    color: #FFFFFF
+}
+
+.img-container{
+    width: 800px;
+    height: 600px;
+    border: 5px dashed #FFFFFF;
+    margin: 40px;
+    background-color: #d9f0df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
