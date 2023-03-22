@@ -38,20 +38,17 @@
             return gifType;
         }
 
-        function searchGif(value) {
-            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=jqR8s06DZtJJqxDJBmt8cXBmvBnKTpAz&s=${value}`, {mode: 'cors'})
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(response) {
-                    img.src = response.data.images.original.url;
-                    if (img.style.display === 'none') {
-                        img.style.display = 'block'
-                    };
-                })
-                .catch(function(response) {
-                    alert('Search error! No results...')
-                });
+        async function searchGif(value) {
+            try {
+                const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=jqR8s06DZtJJqxDJBmt8cXBmvBnKTpAz&s=${value}`, {mode: 'cors'});
+                const gifData = await response.json();
+                img.src = gifData.data.images.original.url;
+                if (img.style.display === 'none') {
+                    img.style.display = 'block'
+                };
+            } catch (error) {
+                alert('Search error! No results...')
+            }
         }
     </script>
 </body>
