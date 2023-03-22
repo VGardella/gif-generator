@@ -16,6 +16,7 @@
         <img src="#"></div>
     <script>
         const submitBtn = document.getElementById('submitBtn');
+        const searchBar = document.getElementById('searchBar');
         const img = document.querySelector('img');
         img.style.display = 'none'
         
@@ -24,8 +25,14 @@
             searchGif(value);
         });
 
+        searchBar.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                submitBtn.click();
+            }
+        })
+
         function getValue() {
-            const searchBar = document.getElementById('searchBar');
             let gifType = searchBar.value;
             searchBar.value = '';
             return gifType;
